@@ -87,7 +87,7 @@ public class Pipeline {
 				}
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Error reading file: " + filePath, e);
 		}
 		
 		return csvRows;
@@ -133,7 +133,7 @@ public class Pipeline {
 			
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Error saving file: " + destinationPath, e);
 		}
 		
 	}
