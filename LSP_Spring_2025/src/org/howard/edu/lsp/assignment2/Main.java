@@ -8,7 +8,7 @@ public class Main {
 		Pipeline pipeline = new Pipeline();
 		
 		// Establish connection and extract rows from CSV file.
-		List<Pipeline.CsvRow> data = pipeline.extract("data/pructs.csv");
+		List<Pipeline.CsvRow> data = pipeline.extract("data/products.csv");
 		
 		// Perform transformations.
 		List<Pipeline.CsvRow> newRows = pipeline.transform(data);
