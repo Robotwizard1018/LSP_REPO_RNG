@@ -43,10 +43,6 @@ public class Pipeline {
 		public void setCategory(String category) {
 		    this.category = category;
 		}
-		
-		public void applyElectronicDiscount(double discountPercentage) {
-		    this.price = Math.round((price * (1 - discountPercentage / 100.0)) * 100.0) / 100.0;
-		}
 			
 	
 		public void setPriceRange(double price) {
@@ -64,13 +60,17 @@ public class Pipeline {
 		        this.priceRange = "Premium";
 		    }
 		}
+		
+		public void applyElectronicDiscount(double discountPercentage) {
+		    this.price = Math.round((price * (1 - discountPercentage / 100.0)) * 100.0) / 100.0;
+		}
+		
 	}
 	
 	
-	
 	public List<Pipeline.CsvRow> extract(String filePath) {
-		List<Pipeline.CsvRow> csvRows = new ArrayList<>();
 		
+		List<Pipeline.CsvRow> csvRows = new ArrayList<>();
 		try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
 				String line;
 				String[] vals;
@@ -95,7 +95,8 @@ public class Pipeline {
 
 	
 	public List<Pipeline.CsvRow> transform(List<Pipeline.CsvRow> csvRows){
-		// Apply transformations 
+		
+		// Apply transformations to each row.
 		for (CsvRow row: csvRows) {
 			row.setName(row.getName().toUpperCase());
 			if (row.getCategory().equals("Electronics")) {

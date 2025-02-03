@@ -4,16 +4,16 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-		// Read in file
+		// Initialize pipeline.
 		Pipeline pipeline = new Pipeline();
 		
-		// Store in some data type/format
+		// Establish connection and extract rows from CSV file.
 		List<Pipeline.CsvRow> data = pipeline.extract("data/products.csv");
 		
-		// Perform transformations
+		// Perform transformations.
 		List<Pipeline.CsvRow> newRows = pipeline.transform(data);
 		
-		// Save results to new file
+		// Save results to new CSV file.
 		pipeline.load(newRows, "data/transformed_products.csv");
 
 	}
