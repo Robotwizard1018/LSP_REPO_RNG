@@ -1,9 +1,8 @@
 package org.howard.edu.lsp.midterm.question2;
 
-import java.util.*;
-import java.io.*;
-
-
+/**
+ * Represents a book with a title, author, ISBN, and publication year.
+ */
 public class Book {
 	
 	private String title;
@@ -11,7 +10,14 @@ public class Book {
 	private String ISBN;
 	private int yearPublished;
 	
-	
+	/**
+     * Constructs a new Book object with the given details.
+     *
+     * @param title the title of the book
+     * @param author the author of the book
+     * @param ISBN the ISBN of the book
+     * @param yearPublished the year the book was published
+     */
 	public Book(String title, String author, String ISBN, int yearPublished){
 		this.title = title;
 		this.author = author;
@@ -26,8 +32,14 @@ public class Book {
 	public String getISBN() {
 		return this.ISBN;
 	}
-
-	@Override
+	
+	 /**
+     * Checks equality based on ISBN and author.
+     *
+     * @param obj the object to compare
+     * @return true if obj is a Book and has the same ISBN and author
+     */
+    @Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Book)){
 			return false;
@@ -37,15 +49,19 @@ public class Book {
 		
 	}
 	
-	@Override
+    /**
+     * Returns overridden toString for a string representation of the book.
+     *
+     * @return the formatted book details string
+     */
+    @Override
 	public String toString() {
 		return "Title: " + this.title + ", Author: " + this.author +
 			   ", ISBN: " + this.ISBN + ", Year Published: " + this.yearPublished;
 	}
 
 	
-	
-	
+
 	
 	
 	
