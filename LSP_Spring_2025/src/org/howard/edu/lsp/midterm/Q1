@@ -1,0 +1,29 @@
+Part 1: Identify Classes
+(10 pts.)
+•	Identify at least four key classes necessary to implement this system. 
+•	Write a short explanation of why each class is needed. 
+	Book - Allows us to create objects to represent the books information.
+	Member - Allows the member to borrow and return books, while also storing how many books they have out
+	Librarian - Manages all books
+	LibrarySystem - Handles logic for storing books
+	Library DB - Stores book information, and availability/check out info
+
+
+Part 2: Define Responsibilities
+(10 pts.)
+•	For each class, list at least two primary responsibilities that class must have.
+	Book - Stores the Title, Author, and ISBN
+	Member - Has a methods to borrow/return books
+	Librarian - Methods to add/remove books, can view all books and their information
+	LibrarySystem - Handles logic to update the LibraryDB with the books status and permissions such as the max book capacity for members, and LibraryDB access for Librarian, and update availability
+	LibraryDB -  Stores the books information, availability, and if/who has it checked out
+
+
+Part 3: Identify Collaborators
+(10 pts.)
+•	For each class, identify other classes it interacts with to fulfill its responsibilities and explain why the collaboration is needed.
+	Book - 
+	Member - Interacts with LibrarySystem to authenticate book rentals
+	Librarian - Interacts with LibrarySystem to view all books, and add/remove them from the LibraryDB. Interact with Book class to add new books
+	LibrarySystem - Interacts with the LibraryDB to authenticate read/writes to the Database. Interacts with Member to manage rentals/borrowing limit. Interacts with Librarian to handling add/removes, and viewing book data
+	LibraryDB - Interacts with LibrarySystem to receive/respond to read/write requests
