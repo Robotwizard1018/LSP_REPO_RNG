@@ -22,12 +22,19 @@ class ShoppingCartTest {
     }
 
     @Test
-    @DisplayName("Test adding multiple to get total cost ")
+    @DisplayName("Test adding multiple to get total cost")
     void testAddMultipleItemsAndGetTotalCost() {
         cart.addItem("Shirt", 25.0);
         cart.addItem("Pants", 45.0);
         cart.addItem("Shoes", 60.0);
         assertEquals(130.0, cart.getTotalCost());
+    }
+    
+    @Test
+    @DisplayName("Test adding item with 0 price")
+    void testAddItemWithZeroPrice() {
+        cart.addItem("FreeItem", 0.0);
+        assertEquals(0.0, cart.getTotalCost());
     }
     
     @Test
